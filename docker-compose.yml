@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+  postgres-parking:
+    image: postgres:latest
+    container_name: postgres-parking
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD="test"
+      - POSTGRES_USER="test"
+      - POSTGRES_DB="Parking"
+    volumes:
+      - data:/var/lib/postgresql/data
+  app:
+    container_name: parking-contractservice
+    image: parking-contractservice
+    build: ./
+    environment:
+      - DB_SERVER="postgres-parking"
+      - POSTGRES_PASSWORD="test"
+      - POSTGRES_USER="test"
+      - POSTGRES_DB="Parking"
+      - DB_SCHEMA="contract-schema"
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres-parking
+
+
+volumes:
+  data:
+
+
+
+
+
