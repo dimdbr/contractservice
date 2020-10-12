@@ -9,10 +9,12 @@ metadata:
     io.kompose.service: postgres-parking
   name: postgres-parking
 spec:
+  type: LoadBalancer
   ports:
   - name: "5432"
     port: 5432
     targetPort: 5432
+
   selector:
     io.kompose.service: postgres-parking
 status:
