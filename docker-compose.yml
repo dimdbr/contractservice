@@ -16,7 +16,7 @@ services:
       - data:/var/lib/postgresql/data
   app:
     container_name: parking-contractservice
-    image: parking-contractservice
+    image: dimdbr/parking-contractservice
     build: ./Dockerfile
     environment:
       - DB_SERVER=postgres-parking
