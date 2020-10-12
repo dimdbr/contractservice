@@ -1,32 +1,34 @@
-version: '3.1'
+version: '3'
 services:
   postgres-parking:
+    tty: true
+    stdin_open: true
     image: postgres:latest
     container_name: postgres-parking
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD="test"
-      - POSTGRES_USER="test"
-      - POSTGRES_DB="Parking"
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_USER=test
+      - POSTGRES_DB=Parking
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - data:/var/lib/postgresql/data
   app:
     container_name: parking-contractservice
     image: parking-contractservice
-    build: ./
+    build: ./Dockerfile
     environment:
-      - DB_SERVER="postgres-parking"
-      - POSTGRES_PASSWORD="test"
-      - POSTGRES_USER="test"
-      - POSTGRES_DB="Parking"
-      - DB_SCHEMA="contract-schema"
+      - DB_SERVER=postgres-parking
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_USER=test
+      - POSTGRES_DB=Parking
+      - DB_SCHEMA=contract-schema
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - 8080:8080
     depends_on:
       - postgres-parking
-
-
 volumes:
   data:
 
