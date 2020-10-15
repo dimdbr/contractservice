@@ -49,7 +49,7 @@ public class ContractserviceApplication {
         dataSource.setInitializationFailTimeout(0);
         dataSource.setMaximumPoolSize(5);
         dataSource.setDataSourceClassName("org.postgresql.ds.PGSimpleDataSource");
-        dataSource.addDataSourceProperty("url", "jdbc:postgresql://192.168.99.100:5432/Parking");
+        dataSource.addDataSourceProperty("url", "jdbc:postgresql://192.168.99.101:31102/Parking");
         dataSource.setSchema("contract_schema");
         dataSource.addDataSourceProperty("user", "test");
         dataSource.addDataSourceProperty("password", "test");
