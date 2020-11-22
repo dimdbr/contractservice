@@ -564,6 +564,482 @@ public final class ContractServiceOuterClass {
 
   }
 
+  public interface IdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Id)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 value = 1;</code>
+     */
+    int getValue();
+  }
+  /**
+   * Protobuf type {@code Id}
+   */
+  public  static final class Id extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Id)
+      IdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Id.newBuilder() to construct.
+    private Id(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Id() {
+      value_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Id(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              value_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.contractservice.grpc.ContractServiceOuterClass.internal_static_Id_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.contractservice.grpc.ContractServiceOuterClass.internal_static_Id_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.contractservice.grpc.ContractServiceOuterClass.Id.class, com.contractservice.grpc.ContractServiceOuterClass.Id.Builder.class);
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private int value_;
+    /**
+     * <code>int32 value = 1;</code>
+     */
+    public int getValue() {
+      return value_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (value_ != 0) {
+        output.writeInt32(1, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (value_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.contractservice.grpc.ContractServiceOuterClass.Id)) {
+        return super.equals(obj);
+      }
+      com.contractservice.grpc.ContractServiceOuterClass.Id other = (com.contractservice.grpc.ContractServiceOuterClass.Id) obj;
+
+      boolean result = true;
+      result = result && (getValue()
+          == other.getValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.contractservice.grpc.ContractServiceOuterClass.Id prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Id}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Id)
+        com.contractservice.grpc.ContractServiceOuterClass.IdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_Id_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_Id_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.contractservice.grpc.ContractServiceOuterClass.Id.class, com.contractservice.grpc.ContractServiceOuterClass.Id.Builder.class);
+      }
+
+      // Construct using com.contractservice.grpc.ContractServiceOuterClass.Id.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        value_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_Id_descriptor;
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.Id getDefaultInstanceForType() {
+        return com.contractservice.grpc.ContractServiceOuterClass.Id.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.Id build() {
+        com.contractservice.grpc.ContractServiceOuterClass.Id result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.Id buildPartial() {
+        com.contractservice.grpc.ContractServiceOuterClass.Id result = new com.contractservice.grpc.ContractServiceOuterClass.Id(this);
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.contractservice.grpc.ContractServiceOuterClass.Id) {
+          return mergeFrom((com.contractservice.grpc.ContractServiceOuterClass.Id)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.contractservice.grpc.ContractServiceOuterClass.Id other) {
+        if (other == com.contractservice.grpc.ContractServiceOuterClass.Id.getDefaultInstance()) return this;
+        if (other.getValue() != 0) {
+          setValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.contractservice.grpc.ContractServiceOuterClass.Id parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.contractservice.grpc.ContractServiceOuterClass.Id) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int value_ ;
+      /**
+       * <code>int32 value = 1;</code>
+       */
+      public int getValue() {
+        return value_;
+      }
+      /**
+       * <code>int32 value = 1;</code>
+       */
+      public Builder setValue(int value) {
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 value = 1;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Id)
+    }
+
+    // @@protoc_insertion_point(class_scope:Id)
+    private static final com.contractservice.grpc.ContractServiceOuterClass.Id DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.contractservice.grpc.ContractServiceOuterClass.Id();
+    }
+
+    public static com.contractservice.grpc.ContractServiceOuterClass.Id getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Id>
+        PARSER = new com.google.protobuf.AbstractParser<Id>() {
+      @java.lang.Override
+      public Id parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Id(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Id> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Id> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.contractservice.grpc.ContractServiceOuterClass.Id getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ClientsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Clients)
       com.google.protobuf.MessageOrBuilder {
@@ -6915,6 +7391,1465 @@ public final class ContractServiceOuterClass {
 
   }
 
+  public interface ParkingPlaceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ParkingPlace)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    int getId();
+
+    /**
+     * <code>bool isOccupied = 2;</code>
+     */
+    boolean getIsOccupied();
+
+    /**
+     * <code>string contractId = 3;</code>
+     */
+    java.lang.String getContractId();
+    /**
+     * <code>string contractId = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getContractIdBytes();
+  }
+  /**
+   * Protobuf type {@code ParkingPlace}
+   */
+  public  static final class ParkingPlace extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ParkingPlace)
+      ParkingPlaceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ParkingPlace.newBuilder() to construct.
+    private ParkingPlace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ParkingPlace() {
+      id_ = 0;
+      isOccupied_ = false;
+      contractId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ParkingPlace(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              isOccupied_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contractId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlace_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlace_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.class, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    public static final int ISOCCUPIED_FIELD_NUMBER = 2;
+    private boolean isOccupied_;
+    /**
+     * <code>bool isOccupied = 2;</code>
+     */
+    public boolean getIsOccupied() {
+      return isOccupied_;
+    }
+
+    public static final int CONTRACTID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object contractId_;
+    /**
+     * <code>string contractId = 3;</code>
+     */
+    public java.lang.String getContractId() {
+      java.lang.Object ref = contractId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contractId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string contractId = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContractIdBytes() {
+      java.lang.Object ref = contractId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contractId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (isOccupied_ != false) {
+        output.writeBool(2, isOccupied_);
+      }
+      if (!getContractIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contractId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (isOccupied_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isOccupied_);
+      }
+      if (!getContractIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contractId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace)) {
+        return super.equals(obj);
+      }
+      com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace other = (com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && (getIsOccupied()
+          == other.getIsOccupied());
+      result = result && getContractId()
+          .equals(other.getContractId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + ISOCCUPIED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOccupied());
+      hash = (37 * hash) + CONTRACTID_FIELD_NUMBER;
+      hash = (53 * hash) + getContractId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ParkingPlace}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ParkingPlace)
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlace_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlace_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.class, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder.class);
+      }
+
+      // Construct using com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+
+        isOccupied_ = false;
+
+        contractId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlace_descriptor;
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace getDefaultInstanceForType() {
+        return com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace build() {
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace buildPartial() {
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace result = new com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace(this);
+        result.id_ = id_;
+        result.isOccupied_ = isOccupied_;
+        result.contractId_ = contractId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace) {
+          return mergeFrom((com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace other) {
+        if (other == com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.getIsOccupied() != false) {
+          setIsOccupied(other.getIsOccupied());
+        }
+        if (!other.getContractId().isEmpty()) {
+          contractId_ = other.contractId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOccupied_ ;
+      /**
+       * <code>bool isOccupied = 2;</code>
+       */
+      public boolean getIsOccupied() {
+        return isOccupied_;
+      }
+      /**
+       * <code>bool isOccupied = 2;</code>
+       */
+      public Builder setIsOccupied(boolean value) {
+        
+        isOccupied_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isOccupied = 2;</code>
+       */
+      public Builder clearIsOccupied() {
+        
+        isOccupied_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contractId_ = "";
+      /**
+       * <code>string contractId = 3;</code>
+       */
+      public java.lang.String getContractId() {
+        java.lang.Object ref = contractId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contractId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string contractId = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContractIdBytes() {
+        java.lang.Object ref = contractId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contractId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string contractId = 3;</code>
+       */
+      public Builder setContractId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contractId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contractId = 3;</code>
+       */
+      public Builder clearContractId() {
+        
+        contractId_ = getDefaultInstance().getContractId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contractId = 3;</code>
+       */
+      public Builder setContractIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contractId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ParkingPlace)
+    }
+
+    // @@protoc_insertion_point(class_scope:ParkingPlace)
+    private static final com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace();
+    }
+
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ParkingPlace>
+        PARSER = new com.google.protobuf.AbstractParser<ParkingPlace>() {
+      @java.lang.Override
+      public ParkingPlace parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ParkingPlace(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ParkingPlace> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ParkingPlace> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ParkingPlacesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ParkingPlaces)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    java.util.List<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> 
+        getParkingPlacesList();
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace getParkingPlaces(int index);
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    int getParkingPlacesCount();
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    java.util.List<? extends com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder> 
+        getParkingPlacesOrBuilderList();
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder getParkingPlacesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code ParkingPlaces}
+   */
+  public  static final class ParkingPlaces extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ParkingPlaces)
+      ParkingPlacesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ParkingPlaces.newBuilder() to construct.
+    private ParkingPlaces(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ParkingPlaces() {
+      parkingPlaces_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ParkingPlaces(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                parkingPlaces_ = new java.util.ArrayList<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              parkingPlaces_.add(
+                  input.readMessage(com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          parkingPlaces_ = java.util.Collections.unmodifiableList(parkingPlaces_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlaces_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlaces_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.class, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.Builder.class);
+    }
+
+    public static final int PARKINGPLACES_FIELD_NUMBER = 1;
+    private java.util.List<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> parkingPlaces_;
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    public java.util.List<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> getParkingPlacesList() {
+      return parkingPlaces_;
+    }
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    public java.util.List<? extends com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder> 
+        getParkingPlacesOrBuilderList() {
+      return parkingPlaces_;
+    }
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    public int getParkingPlacesCount() {
+      return parkingPlaces_.size();
+    }
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace getParkingPlaces(int index) {
+      return parkingPlaces_.get(index);
+    }
+    /**
+     * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+     */
+    public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder getParkingPlacesOrBuilder(
+        int index) {
+      return parkingPlaces_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < parkingPlaces_.size(); i++) {
+        output.writeMessage(1, parkingPlaces_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < parkingPlaces_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, parkingPlaces_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces)) {
+        return super.equals(obj);
+      }
+      com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces other = (com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces) obj;
+
+      boolean result = true;
+      result = result && getParkingPlacesList()
+          .equals(other.getParkingPlacesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getParkingPlacesCount() > 0) {
+        hash = (37 * hash) + PARKINGPLACES_FIELD_NUMBER;
+        hash = (53 * hash) + getParkingPlacesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ParkingPlaces}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ParkingPlaces)
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlacesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlaces_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlaces_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.class, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.Builder.class);
+      }
+
+      // Construct using com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getParkingPlacesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (parkingPlacesBuilder_ == null) {
+          parkingPlaces_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          parkingPlacesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.contractservice.grpc.ContractServiceOuterClass.internal_static_ParkingPlaces_descriptor;
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces getDefaultInstanceForType() {
+        return com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces build() {
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces buildPartial() {
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces result = new com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces(this);
+        int from_bitField0_ = bitField0_;
+        if (parkingPlacesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            parkingPlaces_ = java.util.Collections.unmodifiableList(parkingPlaces_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.parkingPlaces_ = parkingPlaces_;
+        } else {
+          result.parkingPlaces_ = parkingPlacesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces) {
+          return mergeFrom((com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces other) {
+        if (other == com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.getDefaultInstance()) return this;
+        if (parkingPlacesBuilder_ == null) {
+          if (!other.parkingPlaces_.isEmpty()) {
+            if (parkingPlaces_.isEmpty()) {
+              parkingPlaces_ = other.parkingPlaces_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureParkingPlacesIsMutable();
+              parkingPlaces_.addAll(other.parkingPlaces_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parkingPlaces_.isEmpty()) {
+            if (parkingPlacesBuilder_.isEmpty()) {
+              parkingPlacesBuilder_.dispose();
+              parkingPlacesBuilder_ = null;
+              parkingPlaces_ = other.parkingPlaces_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              parkingPlacesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParkingPlacesFieldBuilder() : null;
+            } else {
+              parkingPlacesBuilder_.addAllMessages(other.parkingPlaces_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> parkingPlaces_ =
+        java.util.Collections.emptyList();
+      private void ensureParkingPlacesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          parkingPlaces_ = new java.util.ArrayList<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace>(parkingPlaces_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder> parkingPlacesBuilder_;
+
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public java.util.List<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> getParkingPlacesList() {
+        if (parkingPlacesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parkingPlaces_);
+        } else {
+          return parkingPlacesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public int getParkingPlacesCount() {
+        if (parkingPlacesBuilder_ == null) {
+          return parkingPlaces_.size();
+        } else {
+          return parkingPlacesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace getParkingPlaces(int index) {
+        if (parkingPlacesBuilder_ == null) {
+          return parkingPlaces_.get(index);
+        } else {
+          return parkingPlacesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder setParkingPlaces(
+          int index, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace value) {
+        if (parkingPlacesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.set(index, value);
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder setParkingPlaces(
+          int index, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder builderForValue) {
+        if (parkingPlacesBuilder_ == null) {
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder addParkingPlaces(com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace value) {
+        if (parkingPlacesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.add(value);
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder addParkingPlaces(
+          int index, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace value) {
+        if (parkingPlacesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.add(index, value);
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder addParkingPlaces(
+          com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder builderForValue) {
+        if (parkingPlacesBuilder_ == null) {
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder addParkingPlaces(
+          int index, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder builderForValue) {
+        if (parkingPlacesBuilder_ == null) {
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder addAllParkingPlaces(
+          java.lang.Iterable<? extends com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> values) {
+        if (parkingPlacesBuilder_ == null) {
+          ensureParkingPlacesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parkingPlaces_);
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder clearParkingPlaces() {
+        if (parkingPlacesBuilder_ == null) {
+          parkingPlaces_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public Builder removeParkingPlaces(int index) {
+        if (parkingPlacesBuilder_ == null) {
+          ensureParkingPlacesIsMutable();
+          parkingPlaces_.remove(index);
+          onChanged();
+        } else {
+          parkingPlacesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder getParkingPlacesBuilder(
+          int index) {
+        return getParkingPlacesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder getParkingPlacesOrBuilder(
+          int index) {
+        if (parkingPlacesBuilder_ == null) {
+          return parkingPlaces_.get(index);  } else {
+          return parkingPlacesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public java.util.List<? extends com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder> 
+           getParkingPlacesOrBuilderList() {
+        if (parkingPlacesBuilder_ != null) {
+          return parkingPlacesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parkingPlaces_);
+        }
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder addParkingPlacesBuilder() {
+        return getParkingPlacesFieldBuilder().addBuilder(
+            com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder addParkingPlacesBuilder(
+          int index) {
+        return getParkingPlacesFieldBuilder().addBuilder(
+            index, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ParkingPlace parkingPlaces = 1;</code>
+       */
+      public java.util.List<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder> 
+           getParkingPlacesBuilderList() {
+        return getParkingPlacesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder> 
+          getParkingPlacesFieldBuilder() {
+        if (parkingPlacesBuilder_ == null) {
+          parkingPlacesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.Builder, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaceOrBuilder>(
+                  parkingPlaces_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          parkingPlaces_ = null;
+        }
+        return parkingPlacesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ParkingPlaces)
+    }
+
+    // @@protoc_insertion_point(class_scope:ParkingPlaces)
+    private static final com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces();
+    }
+
+    public static com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ParkingPlaces>
+        PARSER = new com.google.protobuf.AbstractParser<ParkingPlaces>() {
+      @java.lang.Override
+      public ParkingPlaces parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ParkingPlaces(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ParkingPlaces> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ParkingPlaces> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface EmptyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Empty)
       com.google.protobuf.MessageOrBuilder {
@@ -7333,6 +9268,11 @@ public final class ContractServiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_UUID_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Id_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Id_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Clients_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7378,6 +9318,16 @@ public final class ContractServiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_changeClientPlace_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ParkingPlace_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ParkingPlace_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ParkingPlaces_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ParkingPlaces_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Empty_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7392,33 +9342,39 @@ public final class ContractServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ContractService.proto\"\025\n\004UUID\022\r\n\005value" +
-      "\030\001 \001(\t\"#\n\007Clients\022\030\n\007clients\030\001 \003(\0132\007.Cli" +
-      "ent\"\034\n\014CreateClient\022\014\n\004name\030\001 \001(\t\"-\n\014Upd" +
-      "ateClient\022\n\n\002id\030\001 \001(\t\022\021\n\tmonth_pay\030\002 \001(\001" +
-      "\"4\n\006Client\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\020\n\010" +
-      "monthPay\030\003 \001(\001\"A\n\010Contract\022\n\n\002id\030\001 \001(\t\022\021" +
-      "\n\tclient_id\030\002 \001(\t\022\026\n\016reqisteredCars\030\003 \003(" +
-      "\t\")\n\tContracts\022\034\n\tcontracts\030\001 \003(\0132\t.Cont" +
-      "ract\"3\n\016createContract\022\020\n\010clientId\030\001 \001(\t" +
-      "\022\017\n\007carName\030\002 \001(\t\".\n\017changeClientCar\022\n\n\002" +
-      "id\030\001 \001(\t\022\017\n\007carName\030\002 \001(\t\"5\n\021changeClien" +
-      "tPlace\022\n\n\002id\030\001 \001(\t\022\024\n\014parkingPlace\030\002 \001(\005" +
-      "\"\007\n\005Empty2\271\004\n\017ContractService\022\037\n\rGrpcGet" +
-      "Client\022\005.UUID\032\007.Client\022%\n\021GrpcGetAllClie" +
-      "nts\022\006.Empty\032\010.Clients\022&\n\rGrpcAddClient\022\r" +
-      ".CreateClient\032\006.Empty\022!\n\020GrpcDeleteClien" +
-      "t\022\005.UUID\032\006.Empty\022*\n\020GrpcUpdateClient\022\r.U" +
-      "pdateClient\032\007.Client\022#\n\017GrpcGetContract\022" +
-      "\005.UUID\032\t.Contract\022)\n\023GrpcGetAllContracts" +
-      "\022\006.Empty\032\n.Contracts\022*\n\017GrpcAddContract\022" +
-      "\017.createContract\032\006.Empty\0221\n\023GrpcAddParki" +
-      "ngPlace\022\022.changeClientPlace\032\006.Empty\0224\n\026G" +
-      "rpcRemoveParkingPlace\022\022.changeClientPlac" +
-      "e\032\006.Empty\022,\n\020GrpcAddClientCar\022\020.changeCl" +
-      "ientCar\032\006.Empty\022/\n\023GrpcRemoveClientCar\022\020" +
-      ".changeClientCar\032\006.Empty\022#\n\022GrpcDeleteCo" +
-      "ntract\022\005.UUID\032\006.EmptyB\032\n\030com.contractser" +
-      "vice.grpcb\006proto3"
+      "\030\001 \001(\t\"\023\n\002Id\022\r\n\005value\030\001 \001(\005\"#\n\007Clients\022\030" +
+      "\n\007clients\030\001 \003(\0132\007.Client\"\034\n\014CreateClient" +
+      "\022\014\n\004name\030\001 \001(\t\"-\n\014UpdateClient\022\n\n\002id\030\001 \001" +
+      "(\t\022\021\n\tmonth_pay\030\002 \001(\001\"4\n\006Client\022\n\n\002id\030\001 " +
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022\020\n\010monthPay\030\003 \001(\001\"A\n\010C" +
+      "ontract\022\n\n\002id\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\026" +
+      "\n\016reqisteredCars\030\003 \003(\t\")\n\tContracts\022\034\n\tc" +
+      "ontracts\030\001 \003(\0132\t.Contract\"3\n\016createContr" +
+      "act\022\020\n\010clientId\030\001 \001(\t\022\017\n\007carName\030\002 \001(\t\"." +
+      "\n\017changeClientCar\022\n\n\002id\030\001 \001(\t\022\017\n\007carName" +
+      "\030\002 \001(\t\"5\n\021changeClientPlace\022\n\n\002id\030\001 \001(\t\022" +
+      "\024\n\014parkingPlace\030\002 \001(\005\"B\n\014ParkingPlace\022\n\n" +
+      "\002id\030\001 \001(\005\022\022\n\nisOccupied\030\002 \001(\010\022\022\n\ncontrac" +
+      "tId\030\003 \001(\t\"5\n\rParkingPlaces\022$\n\rparkingPla" +
+      "ces\030\001 \003(\0132\r.ParkingPlace\"\007\n\005Empty2\227\005\n\017Co" +
+      "ntractService\022\037\n\rGrpcGetClient\022\005.UUID\032\007." +
+      "Client\022%\n\021GrpcGetAllClients\022\006.Empty\032\010.Cl" +
+      "ients\022&\n\rGrpcAddClient\022\r.CreateClient\032\006." +
+      "Empty\022!\n\020GrpcDeleteClient\022\005.UUID\032\006.Empty" +
+      "\022*\n\020GrpcUpdateClient\022\r.UpdateClient\032\007.Cl" +
+      "ient\022#\n\017GrpcGetContract\022\005.UUID\032\t.Contrac" +
+      "t\022)\n\023GrpcGetAllContracts\022\006.Empty\032\n.Contr" +
+      "acts\022*\n\017GrpcAddContract\022\017.createContract" +
+      "\032\006.Empty\0221\n\023GrpcAddParkingPlace\022\022.change" +
+      "ClientPlace\032\006.Empty\0224\n\026GrpcRemoveParking" +
+      "Place\022\022.changeClientPlace\032\006.Empty\022,\n\020Grp" +
+      "cAddClientCar\022\020.changeClientCar\032\006.Empty\022" +
+      "/\n\023GrpcRemoveClientCar\022\020.changeClientCar" +
+      "\032\006.Empty\022#\n\022GrpcDeleteContract\022\005.UUID\032\006." +
+      "Empty\022)\n\023GrpcGetParkingPlace\022\003.Id\032\r.Park" +
+      "ingPlace\0221\n\027GrpcGetAllParkingPlaces\022\006.Em" +
+      "pty\032\016.ParkingPlacesB\032\n\030com.contractservi" +
+      "ce.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7438,62 +9394,80 @@ public final class ContractServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UUID_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_Clients_descriptor =
+    internal_static_Id_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_Id_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Id_descriptor,
+        new java.lang.String[] { "Value", });
+    internal_static_Clients_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_Clients_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Clients_descriptor,
         new java.lang.String[] { "Clients", });
     internal_static_CreateClient_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_CreateClient_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateClient_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_UpdateClient_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_UpdateClient_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpdateClient_descriptor,
         new java.lang.String[] { "Id", "MonthPay", });
     internal_static_Client_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_Client_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Client_descriptor,
         new java.lang.String[] { "Id", "Name", "MonthPay", });
     internal_static_Contract_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_Contract_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Contract_descriptor,
         new java.lang.String[] { "Id", "ClientId", "ReqisteredCars", });
     internal_static_Contracts_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Contracts_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Contracts_descriptor,
         new java.lang.String[] { "Contracts", });
     internal_static_createContract_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_createContract_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_createContract_descriptor,
         new java.lang.String[] { "ClientId", "CarName", });
     internal_static_changeClientCar_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_changeClientCar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_changeClientCar_descriptor,
         new java.lang.String[] { "Id", "CarName", });
     internal_static_changeClientPlace_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_changeClientPlace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_changeClientPlace_descriptor,
         new java.lang.String[] { "Id", "ParkingPlace", });
+    internal_static_ParkingPlace_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_ParkingPlace_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ParkingPlace_descriptor,
+        new java.lang.String[] { "Id", "IsOccupied", "ContractId", });
+    internal_static_ParkingPlaces_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_ParkingPlaces_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ParkingPlaces_descriptor,
+        new java.lang.String[] { "ParkingPlaces", });
     internal_static_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Empty_descriptor,

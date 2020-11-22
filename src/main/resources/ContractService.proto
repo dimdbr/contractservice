@@ -20,11 +20,18 @@ service ContractService
   rpc GrpcRemoveClientCar(changeClientCar) returns (Empty);
   rpc GrpcDeleteContract(UUID) returns(Empty);
 
+  rpc GrpcGetParkingPlace(Id) returns (ParkingPlace);
+  rpc GrpcGetAllParkingPlaces(Empty) returns (ParkingPlaces);
+
 
 }
 
 message UUID {
   string value = 1;
+}
+message Id
+{
+  int32 value =1;
 }
 message Clients
 {
@@ -69,5 +76,18 @@ message changeClientPlace
 {
   string id =1;
   int32 parkingPlace=2;
+}
+
+message ParkingPlace
+{
+  int32 id=1;
+  bool isOccupied =2;
+  string contractId=3;
+
+}
+
+message ParkingPlaces
+{
+  repeated ParkingPlace parkingPlaces =1;
 }
 message  Empty{}

@@ -4,6 +4,7 @@ import com.contractservice.grpc.ContractServiceGrpc;
 import com.contractservice.grpc.ContractServiceOuterClass;
 import com.example.parking.contractservice.model.Client;
 import com.example.parking.contractservice.model.Contract;
+import com.example.parking.contractservice.model.ParkingPlace;
 import com.example.parking.contractservice.repositories.ClientRepo;
 import com.example.parking.contractservice.repositories.ContractRepo;
 import com.example.parking.contractservice.repositories.ParkingPlaceRepo;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -172,13 +174,41 @@ public class GRPCClientService extends ContractServiceGrpc.ContractServiceImplBa
 
     @Override
     public void grpcAddParkingPlace(ContractServiceOuterClass.changeClientPlace request, StreamObserver<ContractServiceOuterClass.Empty> responseObserver) {
-        super.grpcAddParkingPlace(request, responseObserver);
+        String contractId = request.getId();
+        UUID contractUuid = UUID.fromString(contractId);
+        int parkingPlaceId = request.getParkingPlace();
+        Optional<ParkingPlace> tempPP = parkingPlaceRepo.findById(parkingPlaceId);
+        if(tempPP.isPresent() && tempPP.get().isOccupied()==false)
+        {
+            parkingPlaceRepo.save(tempPP.get().addToContract(contractUuid));
+        }
+        ContractServiceOuterClass.Empty.Builder response =
+                ContractServiceOuterClass.Empty.newBuilder();
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void grpcRemoveParkingPlace(ContractServiceOuterClass.changeClientPlace request, StreamObserver<ContractServiceOuterClass.Empty> responseObserver) {
-        super.grpcRemoveParkingPlace(request, responseObserver);
+        String contractId = request.getId();
+        UUID contractUuid = UUID.fromString(contractId);
+        int parkingPlaceId = request.getParkingPlace();
+        Optional<ParkingPlace> tempPP = parkingPlaceRepo.findById(parkingPlaceId);
+        if(tempPP.isPresent() &&
+                tempPP.get().isOccupied()&&
+                tempPP.get().getContractId().equals(contractUuid))
+        {
+            parkingPlaceRepo.save(tempPP.
+                    get().
+                    removeFromContract(contractUuid));
+
+        }
+        ContractServiceOuterClass.Empty.Builder response =
+                ContractServiceOuterClass.Empty.newBuilder();
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
     }
+
 
     @Override
     public void grpcAddClientCar(ContractServiceOuterClass.changeClientCar request, StreamObserver<ContractServiceOuterClass.Empty> responseObserver) {
@@ -216,6 +246,50 @@ public class GRPCClientService extends ContractServiceGrpc.ContractServiceImplBa
         ContractServiceOuterClass.Empty.Builder response =
                 ContractServiceOuterClass.Empty.newBuilder();
         responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void grpcGetParkingPlace(ContractServiceOuterClass.Id request, StreamObserver<ContractServiceOuterClass.ParkingPlace> responseObserver) {
+        int id = request.getValue();
+        Optional<ParkingPlace> tempPP = parkingPlaceRepo.findById(id);
+        ParkingPlace parkingPlace;
+        ContractServiceOuterClass.ParkingPlace.Builder response = ContractServiceOuterClass.ParkingPlace.newBuilder();
+        if(tempPP.isPresent())
+        {
+            parkingPlace = tempPP.get();
+            response.setId(parkingPlace.getParkingPlaceId());
+            if(Objects.isNull(parkingPlace.getContractId()))
+            {
+                response.setContractId("is empty");
+            }
+            else
+            response.setContractId(parkingPlace.getContractId().toString());
+            response.setIsOccupied(parkingPlace.isOccupied());
+        }
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
+
+    }
+
+    @Override
+    public void grpcGetAllParkingPlaces(ContractServiceOuterClass.Empty request, StreamObserver<ContractServiceOuterClass.ParkingPlaces> responseObserver) {
+        List<ParkingPlace> parkingPlaces = parkingPlaceRepo.findAll();
+        ContractServiceOuterClass.ParkingPlaces.Builder PPResponse= ContractServiceOuterClass.ParkingPlaces.newBuilder();
+        for(ParkingPlace pp : parkingPlaces)
+        {
+            ContractServiceOuterClass.ParkingPlace.Builder  PPToList= ContractServiceOuterClass.ParkingPlace.newBuilder();
+            PPToList.setId(pp.getParkingPlaceId());
+            if(Objects.isNull(pp.getContractId()))
+            {
+                PPToList.setContractId("is empty");
+            }
+            else
+            PPToList.setContractId(pp.getContractId().toString());
+            PPToList.setIsOccupied(pp.isOccupied());
+            PPResponse.addParkingPlaces(PPToList);
+        }
+        responseObserver.onNext(PPResponse.build());
         responseObserver.onCompleted();
     }
 }

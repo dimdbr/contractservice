@@ -443,6 +443,70 @@ public final class ContractServiceGrpc {
      return getGrpcDeleteContractMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.contractservice.grpc.ContractServiceOuterClass.Id,
+      com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> getGrpcGetParkingPlaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GrpcGetParkingPlace",
+      requestType = com.contractservice.grpc.ContractServiceOuterClass.Id.class,
+      responseType = com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.contractservice.grpc.ContractServiceOuterClass.Id,
+      com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> getGrpcGetParkingPlaceMethod() {
+    io.grpc.MethodDescriptor<com.contractservice.grpc.ContractServiceOuterClass.Id, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> getGrpcGetParkingPlaceMethod;
+    if ((getGrpcGetParkingPlaceMethod = ContractServiceGrpc.getGrpcGetParkingPlaceMethod) == null) {
+      synchronized (ContractServiceGrpc.class) {
+        if ((getGrpcGetParkingPlaceMethod = ContractServiceGrpc.getGrpcGetParkingPlaceMethod) == null) {
+          ContractServiceGrpc.getGrpcGetParkingPlaceMethod = getGrpcGetParkingPlaceMethod = 
+              io.grpc.MethodDescriptor.<com.contractservice.grpc.ContractServiceOuterClass.Id, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "ContractService", "GrpcGetParkingPlace"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.contractservice.grpc.ContractServiceOuterClass.Id.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace.getDefaultInstance()))
+                  .setSchemaDescriptor(new ContractServiceMethodDescriptorSupplier("GrpcGetParkingPlace"))
+                  .build();
+          }
+        }
+     }
+     return getGrpcGetParkingPlaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.contractservice.grpc.ContractServiceOuterClass.Empty,
+      com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces> getGrpcGetAllParkingPlacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GrpcGetAllParkingPlaces",
+      requestType = com.contractservice.grpc.ContractServiceOuterClass.Empty.class,
+      responseType = com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.contractservice.grpc.ContractServiceOuterClass.Empty,
+      com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces> getGrpcGetAllParkingPlacesMethod() {
+    io.grpc.MethodDescriptor<com.contractservice.grpc.ContractServiceOuterClass.Empty, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces> getGrpcGetAllParkingPlacesMethod;
+    if ((getGrpcGetAllParkingPlacesMethod = ContractServiceGrpc.getGrpcGetAllParkingPlacesMethod) == null) {
+      synchronized (ContractServiceGrpc.class) {
+        if ((getGrpcGetAllParkingPlacesMethod = ContractServiceGrpc.getGrpcGetAllParkingPlacesMethod) == null) {
+          ContractServiceGrpc.getGrpcGetAllParkingPlacesMethod = getGrpcGetAllParkingPlacesMethod = 
+              io.grpc.MethodDescriptor.<com.contractservice.grpc.ContractServiceOuterClass.Empty, com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "ContractService", "GrpcGetAllParkingPlaces"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.contractservice.grpc.ContractServiceOuterClass.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces.getDefaultInstance()))
+                  .setSchemaDescriptor(new ContractServiceMethodDescriptorSupplier("GrpcGetAllParkingPlaces"))
+                  .build();
+          }
+        }
+     }
+     return getGrpcGetAllParkingPlacesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -561,6 +625,20 @@ public final class ContractServiceGrpc {
       asyncUnimplementedUnaryCall(getGrpcDeleteContractMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void grpcGetParkingPlace(com.contractservice.grpc.ContractServiceOuterClass.Id request,
+        io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> responseObserver) {
+      asyncUnimplementedUnaryCall(getGrpcGetParkingPlaceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void grpcGetAllParkingPlaces(com.contractservice.grpc.ContractServiceOuterClass.Empty request,
+        io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces> responseObserver) {
+      asyncUnimplementedUnaryCall(getGrpcGetAllParkingPlacesMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -654,6 +732,20 @@ public final class ContractServiceGrpc {
                 com.contractservice.grpc.ContractServiceOuterClass.UUID,
                 com.contractservice.grpc.ContractServiceOuterClass.Empty>(
                   this, METHODID_GRPC_DELETE_CONTRACT)))
+          .addMethod(
+            getGrpcGetParkingPlaceMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.contractservice.grpc.ContractServiceOuterClass.Id,
+                com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace>(
+                  this, METHODID_GRPC_GET_PARKING_PLACE)))
+          .addMethod(
+            getGrpcGetAllParkingPlacesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.contractservice.grpc.ContractServiceOuterClass.Empty,
+                com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces>(
+                  this, METHODID_GRPC_GET_ALL_PARKING_PLACES)))
           .build();
     }
   }
@@ -779,6 +871,22 @@ public final class ContractServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGrpcDeleteContractMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void grpcGetParkingPlace(com.contractservice.grpc.ContractServiceOuterClass.Id request,
+        io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGrpcGetParkingPlaceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void grpcGetAllParkingPlaces(com.contractservice.grpc.ContractServiceOuterClass.Empty request,
+        io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGrpcGetAllParkingPlacesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -888,6 +996,20 @@ public final class ContractServiceGrpc {
     public com.contractservice.grpc.ContractServiceOuterClass.Empty grpcDeleteContract(com.contractservice.grpc.ContractServiceOuterClass.UUID request) {
       return blockingUnaryCall(
           getChannel(), getGrpcDeleteContractMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace grpcGetParkingPlace(com.contractservice.grpc.ContractServiceOuterClass.Id request) {
+      return blockingUnaryCall(
+          getChannel(), getGrpcGetParkingPlaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces grpcGetAllParkingPlaces(com.contractservice.grpc.ContractServiceOuterClass.Empty request) {
+      return blockingUnaryCall(
+          getChannel(), getGrpcGetAllParkingPlacesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1012,6 +1134,22 @@ public final class ContractServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGrpcDeleteContractMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace> grpcGetParkingPlace(
+        com.contractservice.grpc.ContractServiceOuterClass.Id request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGrpcGetParkingPlaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces> grpcGetAllParkingPlaces(
+        com.contractservice.grpc.ContractServiceOuterClass.Empty request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGrpcGetAllParkingPlacesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GRPC_GET_CLIENT = 0;
@@ -1027,6 +1165,8 @@ public final class ContractServiceGrpc {
   private static final int METHODID_GRPC_ADD_CLIENT_CAR = 10;
   private static final int METHODID_GRPC_REMOVE_CLIENT_CAR = 11;
   private static final int METHODID_GRPC_DELETE_CONTRACT = 12;
+  private static final int METHODID_GRPC_GET_PARKING_PLACE = 13;
+  private static final int METHODID_GRPC_GET_ALL_PARKING_PLACES = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1096,6 +1236,14 @@ public final class ContractServiceGrpc {
         case METHODID_GRPC_DELETE_CONTRACT:
           serviceImpl.grpcDeleteContract((com.contractservice.grpc.ContractServiceOuterClass.UUID) request,
               (io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.Empty>) responseObserver);
+          break;
+        case METHODID_GRPC_GET_PARKING_PLACE:
+          serviceImpl.grpcGetParkingPlace((com.contractservice.grpc.ContractServiceOuterClass.Id) request,
+              (io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlace>) responseObserver);
+          break;
+        case METHODID_GRPC_GET_ALL_PARKING_PLACES:
+          serviceImpl.grpcGetAllParkingPlaces((com.contractservice.grpc.ContractServiceOuterClass.Empty) request,
+              (io.grpc.stub.StreamObserver<com.contractservice.grpc.ContractServiceOuterClass.ParkingPlaces>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1171,6 +1319,8 @@ public final class ContractServiceGrpc {
               .addMethod(getGrpcAddClientCarMethod())
               .addMethod(getGrpcRemoveClientCarMethod())
               .addMethod(getGrpcDeleteContractMethod())
+              .addMethod(getGrpcGetParkingPlaceMethod())
+              .addMethod(getGrpcGetAllParkingPlacesMethod())
               .build();
         }
       }
