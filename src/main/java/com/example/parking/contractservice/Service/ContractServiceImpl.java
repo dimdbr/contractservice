@@ -15,9 +15,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ContractServiceImpl implements ContractService {
-
-    @Autowired
+public class ContractServiceImpl implements ContractService {@Autowired
     private ContractRepo contractRepository;
 
     @Autowired

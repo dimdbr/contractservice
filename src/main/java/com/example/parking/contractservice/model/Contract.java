@@ -4,10 +4,13 @@ import com.vladmihalcea.hibernate.type.array.ListArrayType;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+@Component
 @Entity
 @Table(schema ="contract_schema",name = "contracts")
 @TypeDef(
@@ -37,8 +40,9 @@ public class Contract {
     public Contract(UUID clientId, String carName)
     {   this.ContractId= UUID.randomUUID();
         this.ClientId= clientId;
-
-        this.registeredCars.add(carName);
+        List<String> list = new ArrayList<>();
+        list.add(carName);
+        this.registeredCars= list;
     }
     public Contract(UUID clientId, List<String> carNames)
     {
