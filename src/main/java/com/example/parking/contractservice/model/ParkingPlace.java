@@ -1,10 +1,10 @@
 package com.example.parking.contractservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.UUID;
-
 @Entity
 @Table(name = "parkingplaces",schema = "contract_schema")
 public class ParkingPlace {
