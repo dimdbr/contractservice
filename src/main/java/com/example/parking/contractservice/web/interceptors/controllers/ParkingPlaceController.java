@@ -36,7 +36,7 @@ public class ParkingPlaceController {
     public String create(@RequestBody ParkingPlace parkingPlace) throws JsonProcessingException {
 
         //String json = objectMapper.writeValueAsString(parkingPlaceService.createParkingPlace(parkingPlace));
-        template.convertAndSend(MessagingConfig.EXCHANGE,MessagingConfig.ROUTING_KEY,parkingPlace);
+        template.convertAndSend(MessagingConfig.EXCHANGECreatePP,MessagingConfig.ROUTING_KEY,parkingPlace);
         return "Added parking place";
     }
 
@@ -52,7 +52,7 @@ public class ParkingPlaceController {
 
     @PutMapping(value = "/{id}")
     public String update(@PathVariable(name = "id") int id) throws NotFoundException {
-        template.convertAndSend(MessagingConfig.EXCHANGE,MessagingConfig.ROUTING_KEY,id);
+        template.convertAndSend(MessagingConfig.EXCHANGEUpdatePP,MessagingConfig.ROUTING_KEY,id);
         return "Status changed successfully";
         //return ResponseEntity.ok(parkingPlaceService.updateParkingPlaceStatus(id));
     }

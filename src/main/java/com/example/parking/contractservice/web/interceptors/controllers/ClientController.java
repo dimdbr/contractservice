@@ -1,8 +1,10 @@
 package com.example.parking.contractservice.web.interceptors.controllers;
 
+import com.config.MessagingConfig;
 import com.example.parking.contractservice.Service.ClientService;
 import com.example.parking.contractservice.model.Client;
 import javassist.NotFoundException;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,17 +15,23 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/clients")
 public class ClientController {
-    private final ClientService clientService;
+
     @Autowired
+    private RabbitTemplate template;
+    @Autowired
+    private final ClientService clientService;
+
     public ClientController(ClientService clientService) {
 
         this.clientService = clientService;
     }
 
     @PostMapping()
-    public ResponseEntity<?> create(@RequestBody Client client)
+    public String create(@RequestBody Client client)
     {
-        return ResponseEntity.ok(clientService.createClient(client));
+        template.convertAndSend(MessagingConfig.EXCHANGECreateClient,MessagingConfig.ROUTING_KEY,client);
+        return "client created";
+        //return ResponseEntity.ok(clientService.createClient(client));
     }
 
     @GetMapping()
@@ -38,9 +46,10 @@ public class ClientController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id) throws NotFoundException {
-        clientService.deleteClient(id);
-        return ResponseEntity.noContent().build();
+    public void delete(@PathVariable(name = "id") UUID id) throws NotFoundException {
+        template.convertAndSend(MessagingConfig.EXCHANGEDeleteClient,MessagingConfig.ROUTING_KEY,id);
+        //clientService.deleteClient(id);
+        //return ResponseEntity.noContent().build();
     }
 
 }
